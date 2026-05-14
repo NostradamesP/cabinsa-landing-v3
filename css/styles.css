@@ -562,8 +562,6 @@ a { color: inherit; text-decoration: none; }
 .equipment-card {
   min-height: 520px;
   overflow: hidden;
-  box-shadow: var(--shadow);
-  border-bottom: 8px solid var(--red);
   display: flex;
 }
 
