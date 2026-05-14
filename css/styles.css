@@ -14,7 +14,7 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 140px; }
 
 body {
   margin: 0;
@@ -143,8 +143,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero {
-  min-height: 96dvh;
-  padding: 205px 0 86px;
+  min-height: 80dvh;
+  padding: 140px 0 60px;
   position: relative;
   color: var(--white);
   overflow: hidden;
@@ -178,6 +178,7 @@ a { color: inherit; text-decoration: none; }
 .hero-content {
   position: relative;
   z-index: 1;
+  width: 100%;
   display: grid;
   grid-template-columns: minmax(0, 1fr) 350px;
   gap: 44px;
@@ -898,11 +899,11 @@ body.nav-open { overflow: hidden; }
 
   .hero {
     min-height: auto;
-    padding-top: 140px;
-    padding-bottom: 56px;
+    padding-top: 110px;
+    padding-bottom: 40px;
   }
 
-  .hero h1 { font-size: clamp(36px, 10vw, 56px); }
+  .hero h1 { font-size: clamp(32px, 8vw, 46px); }
 
   .hero-content,
   .split,
@@ -913,7 +914,7 @@ body.nav-open { overflow: hidden; }
     grid-template-columns: 1fr;
   }
 
-  .split { gap: 40px; }
+  .split { gap: 30px; }
 
   .feature-list,
   .image-band-grid,
@@ -927,53 +928,58 @@ body.nav-open { overflow: hidden; }
 
   .process-step { min-height: auto; }
 
-  .image-card.tall { min-height: 280px; }
+  .image-card.tall { min-height: 220px; }
 
-  .image-card { min-height: 240px; }
+  .image-card { min-height: 200px; }
 
-  .image-band { padding: 0 0 56px; }
-
-  .section { padding: 64px 0; }
-
-  .section-head { margin-bottom: 32px; }
-}
-
-@media (max-width: 560px) {
-  .container { width: min(100% - 28px, var(--container)); }
-
-  .brand img { width: 148px; }
-
-  .nav-inner { height: 76px; }
-
-  .nav-links { top: 114px; }
-
-  .hero {
-    padding-top: 120px;
-    padding-bottom: 40px;
-  }
-
-  .hero h1 { font-size: 36px; }
-
-  .hero-lead { font-size: 17px; }
-
-  .hero-actions .btn {
-    width: 100%;
-    min-height: 52px;
-  }
+  .image-band { padding: 0 0 40px; }
 
   .section { padding: 48px 0; }
 
-  .feature-list article { min-height: auto; }
+  .section-head { margin-bottom: 24px; }
+}
 
-  .service-card { min-height: auto; }
+@media (max-width: 560px) {
+  .container { width: min(100% - 24px, var(--container)); }
 
+  .brand img { width: 132px; }
+
+  .nav-inner { height: 68px; }
+
+  .nav-links { top: 106px; }
+
+  .hero {
+    padding-top: 105px;
+    padding-bottom: 36px;
+  }
+
+  .hero h1 { font-size: 32px; }
+
+  .hero-lead { font-size: 16px; margin: 16px 0 24px; }
+
+  .hero-actions .btn {
+    width: 100%;
+    min-height: 50px;
+    font-size: 15px;
+  }
+
+  .hero-metrics div { padding: 16px; }
+
+  .hero-metrics strong { font-size: 20px; }
+
+  .section { padding: 40px 0; }
+
+  .section-head { margin-bottom: 20px; }
+
+  .feature-list article,
+  .service-card,
   .benefit-list article { min-height: auto; }
 
   .form-row { grid-template-columns: 1fr; }
 
-  .contact-panel { padding: 24px; }
+  .contact-panel { padding: 20px; }
 
-  .contact-data { flex-direction: column; }
+  .contact-data { flex-direction: column; align-items: stretch; }
 
   .footer-inner {
     grid-template-columns: 1fr;
@@ -981,11 +987,29 @@ body.nav-open { overflow: hidden; }
     justify-items: center;
   }
 
-  .footer img { width: 160px; }
+  .footer img { width: 150px; }
 
-  .benefits-grid { gap: 32px; }
+  .benefits-grid { gap: 24px; }
 
-  .process-step { padding: 24px; }
+  .process-step { padding: 20px; }
 
-  .content-block h3 { font-size: 28px; }
+  .content-block h3 { font-size: 26px; }
+
+  .section-label h2,
+  .section-head h2,
+  .content-block h2,
+  .benefit-copy h2,
+  .faq h2,
+  .contact-panel h2 { font-size: 32px; }
+
+  .service-card { padding: 22px; }
+  .service-card::before { margin-bottom: 32px; }
+
+  .equipment-card { min-height: 280px; }
+
+  .process-step small { margin-bottom: 32px; }
+
+  .quote-form small { font-size: 12px; }
+
+  .contact-data span { width: 100%; text-align: center; }
 }
