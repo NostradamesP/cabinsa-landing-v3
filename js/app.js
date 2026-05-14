@@ -4,7 +4,7 @@ const navLinks = document.querySelector(".nav-links");
 const quoteForm = document.querySelector("#quoteForm");
 const year = document.querySelector("#year");
 
-const WHATSAPP_NUMBER = ""; // Agregar el número real en formato internacional. Ej: 18095551234
+const WHATSAPP_NUMBER = "18099797867";
 
 if (year) year.textContent = new Date().getFullYear();
 
@@ -15,6 +15,7 @@ window.addEventListener("scroll", () => {
 menuToggle?.addEventListener("click", () => {
   const open = navLinks.classList.toggle("open");
   menuToggle.setAttribute("aria-expanded", String(open));
+  document.body.classList.toggle("nav-open", open);
 });
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
