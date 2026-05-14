@@ -39,6 +39,11 @@ document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale")
 quoteForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  const btn = quoteForm.querySelector("button[type=submit]");
+  const originalText = btn.textContent;
+  btn.textContent = "Abriendo WhatsApp...";
+  btn.disabled = true;
+
   const data = new FormData(quoteForm);
   const message = [
     "Hola CABINSA, quiero solicitar una evaluación para mi proyecto.",
@@ -53,8 +58,18 @@ quoteForm?.addEventListener("submit", (event) => {
 
   if (!WHATSAPP_NUMBER) {
     alert("Mensaje preparado:\n\n" + message + "\n\nPara activar WhatsApp directo, agrega el número en js/app.js.");
+    btn.textContent = originalText;
+    btn.disabled = false;
     return;
   }
 
-  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+  const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    location.href = url;
+  } else {
+    window.open(url, "_blank", "noopener");
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }
 });
