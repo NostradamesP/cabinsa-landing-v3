@@ -28,11 +28,12 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
   });
 });
 
+const isMobile = window.innerWidth < 768;
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) entry.target.classList.add("visible");
   });
-}, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
+}, { threshold: isMobile ? 0.03 : 0.05, rootMargin: isMobile ? "0px 0px -20px 0px" : "0px 0px -40px 0px" });
 
 document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale").forEach((el) => observer.observe(el));
 
