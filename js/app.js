@@ -31,7 +31,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.05, rootMargin: "0px 0px -40px 0px" });
 
-document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale").forEach((el) => observer.observe(el));
 
 quoteForm?.addEventListener("submit", (event) => {
   event.preventDefault();
