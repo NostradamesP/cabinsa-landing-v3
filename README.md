@@ -1,11 +1,11 @@
-# CABINSA Landing V3
+# CABINSA Landing
 
-Versión más empresarial e inspirada en la estructura visual de Evergreen Siteworks, adaptada a CABINSA SRL.
+Versión empresarial inspirada en Evergreen Siteworks, adaptada a CABINSA SRL.
 
 ## Archivos
 
 ```txt
-cabinsa-landing-v3/
+cabinsa-landing/
 ├── index.html
 ├── css/styles.css
 ├── js/app.js
